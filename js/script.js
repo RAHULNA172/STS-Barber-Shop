@@ -94,12 +94,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const bookingForm = document.getElementById('booking-form');
     const popup = document.getElementById('popup');
     const popupClose = document.getElementById('popup-close');
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxthAmAGTAbI0_DGgrs1DgQaSRwYJHX7bPAXYfY74J0V0v9Wr1cdZudm5Fg1OP1H_2a/exec";
 
     if (bookingForm) {
-        bookingForm.addEventListener('submit', (e) => {
+        bookingForm.addEventListener("submit", function(e) {
             e.preventDefault();
-            popup.classList.add('show-popup');
-            bookingForm.reset();
+
+            const data = {
+                name: document.getElementById("name").value,
+                phone: document.getElementById("phone").value,
+                email: document.getElementById("email").value,
+                barber: document.getElementById("barber").value,
+                service: document.getElementById("service").value,
+                date: document.getElementById("date").value,
+                time: document.getElementById("time").value,
+                message: document.getElementById("message").value
+            };
+
+            fetch(SCRIPT_URL, {
+                method: "POST",
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (popup) {
+                    popup.classList.add("show-popup");
+                }
+                bookingForm.reset();
+            })
+            .catch(error => {
+                console.log(error);
+                alert("Something went wrong.");
+            });
         });
     }
 
@@ -108,26 +134,4 @@ document.addEventListener('DOMContentLoaded', () => {
             popup.classList.remove('show-popup');
         });
     }
-});
-//databse code 
-const url = "https://script.google.com/macros/s/AKfycbxthAmAGTAbI0_DGgrs1DgQaSRwYJHX7bPAXYfY74J0V0v9Wr1cdZudm5Fg1OP1H_2a/exec";
-
-const data = {
-    name: name,
-    phone: phone,
-    email: email,
-    barber: barber,
-    service: service,
-    date: date,
-    time: time,
-    message: message
-};
-
-fetch(url, {
-    method: "POST",
-    body: JSON.stringify(data)
-})
-.then(response => response.json())
-.then(result => {
-    alert("Appointment Booked Successfully!");
 });
