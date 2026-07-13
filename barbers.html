@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Barbers | STS Barber Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .barber__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .barber__card {
+            text-align: center;
+            overflow: hidden;
+            padding: 0; /* image reaches edge */
+        }
+        .barber__img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--accent-color);
+        }
+        .barber__info {
+            padding: 1.5rem;
+        }
+        .barber__info h3 {
+            margin-top: 0.5rem;
+            color: var(--primary-color);
+        }
+        .barber__stars {
+            color: #eab308;
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body class="light-theme">
+    <header class="header scroll-header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <h2>STS <span>Barber Studio</span></h2>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About Us</a></li>
+                    <li class="nav__item"><a href="barbers.html" class="nav__link active-link">Our Barbers</a></li>
+                    <li class="nav__item"><a href="services.html" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="gallery.html" class="nav__link">Gallery</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__btns">
+                <a href="index.html#appointment" class="btn btn-primary nav__btn">Book Now</a>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main" style="padding-top: 6rem;">
+        <section class="section container fade-up">
+            <h1 class="section__title">Our Professional Barbers</h1>
+            <span class="section__subtitle">Meet our experts</span>
+            
+            <div class="barber__grid">
+                <div class="barber__card glass-card">
+                    <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Rahul" class="barber__img">
+                    <div class="barber__info">
+                        <h3>Rahul</h3>
+                        <p style="color: var(--accent-color); font-weight: 500;">Senior Barber</p>
+                        <p style="font-size: 0.9rem; color: var(--text-color-light); margin-top:0.5rem">8 Years Experience</p>
+                        <div class="barber__stars">⭐⭐⭐⭐⭐</div>
+                        <a href="index.html#appointment" class="btn btn-primary" style="margin-top: 1rem; width:100%">Select Barber</a>
+                    </div>
+                </div>
+                <div class="barber__card glass-card">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Arjun" class="barber__img">
+                    <div class="barber__info">
+                        <h3>Arjun</h3>
+                        <p style="color: var(--accent-color); font-weight: 500;">Hair Styling Expert</p>
+                        <p style="font-size: 0.9rem; color: var(--text-color-light); margin-top:0.5rem">6 Years Experience</p>
+                        <div class="barber__stars">⭐⭐⭐⭐⭐</div>
+                        <a href="index.html#appointment" class="btn btn-primary" style="margin-top: 1rem; width:100%">Select Barber</a>
+                    </div>
+                </div>
+                <div class="barber__card glass-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Vikram" class="barber__img">
+                    <div class="barber__info">
+                        <h3>Vikram</h3>
+                        <p style="color: var(--accent-color); font-weight: 500;">Beard Specialist</p>
+                        <p style="font-size: 0.9rem; color: var(--text-color-light); margin-top:0.5rem">5 Years Experience</p>
+                        <div class="barber__stars">⭐⭐⭐⭐⭐</div>
+                        <a href="index.html#appointment" class="btn btn-primary" style="margin-top: 1rem; width:100%">Select Barber</a>
+                    </div>
+                </div>
+                <div class="barber__card glass-card">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Aman" class="barber__img">
+                    <div class="barber__info">
+                        <h3>Aman</h3>
+                        <p style="color: var(--accent-color); font-weight: 500;">Fade Master</p>
+                        <p style="font-size: 0.9rem; color: var(--text-color-light); margin-top:0.5rem">7 Years Experience</p>
+                        <div class="barber__stars">⭐⭐⭐⭐⭐</div>
+                        <a href="index.html#appointment" class="btn btn-primary" style="margin-top: 1rem; width:100%">Select Barber</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>

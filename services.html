@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Pricing | STS Barber Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .services__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .service__card {
+            text-align: center;
+        }
+        .service__card h3 {
+            margin: 1rem 0 0.5rem;
+            color: var(--primary-color);
+        }
+        .pricing__table {
+            width: 100%;
+            margin-top: 2rem;
+            border-collapse: collapse;
+        }
+        .pricing__table th, .pricing__table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+        }
+        .pricing__table th {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body class="light-theme">
+    <header class="header scroll-header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <h2>STS <span>Barber Studio</span></h2>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About Us</a></li>
+                    <li class="nav__item"><a href="barbers.html" class="nav__link">Our Barbers</a></li>
+                    <li class="nav__item"><a href="services.html" class="nav__link active-link">Services</a></li>
+                    <li class="nav__item"><a href="gallery.html" class="nav__link">Gallery</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__btns">
+                <a href="index.html#appointment" class="btn btn-primary nav__btn">Book Now</a>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main" style="padding-top: 6rem;">
+        <section class="section container fade-up">
+            <h1 class="section__title">Our Services</h1>
+            <span class="section__subtitle">Premium Grooming Solutions</span>
+            
+            <div class="services__grid">
+                <div class="service__card glass-card">
+                    <i class="fas fa-cut fa-3x" style="color:var(--primary-color)"></i>
+                    <h3>Hair Cut</h3>
+                    <p>₹250 - 30 Minutes</p>
+                    <a href="index.html#appointment" class="btn btn-secondary" style="margin-top: 1rem; padding: 0.5rem 1rem;">Book Now</a>
+                </div>
+                <div class="service__card glass-card">
+                    <i class="fas fa-cut fa-3x" style="color:var(--primary-color)"></i>
+                    <h3>Beard Trim</h3>
+                    <p>₹150 - 20 Minutes</p>
+                    <a href="index.html#appointment" class="btn btn-secondary" style="margin-top: 1rem; padding: 0.5rem 1rem;">Book Now</a>
+                </div>
+                <div class="service__card glass-card">
+                    <i class="fas fa-spa fa-3x" style="color:var(--primary-color)"></i>
+                    <h3>Hair Spa</h3>
+                    <p>₹700 - 45 Minutes</p>
+                    <a href="index.html#appointment" class="btn btn-secondary" style="margin-top: 1rem; padding: 0.5rem 1rem;">Book Now</a>
+                </div>
+                <!-- Additional services can be added here following same structure -->
+            </div>
+        </section>
+
+        <section class="section container fade-up">
+            <h2 class="section__title">Pricing</h2>
+            <div class="glass-card">
+                <table class="pricing__table">
+                    <tr><th>Service</th><th>Price</th></tr>
+                    <tr><td>Hair Cut</td><td>₹250</td></tr>
+                    <tr><td>Beard</td><td>₹150</td></tr>
+                    <tr><td>Hair + Beard</td><td>₹350</td></tr>
+                    <tr><td>Hair Spa</td><td>₹700</td></tr>
+                    <tr><td>Facial</td><td>₹1000</td></tr>
+                    <tr><td>Head Massage</td><td>₹400</td></tr>
+                    <tr><td>Royal Package</td><td>₹1999</td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
