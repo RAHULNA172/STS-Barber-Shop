@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Nav Menu
     const navMenu = document.getElementById('nav-menu'),
-          navToggle = document.getElementById('nav-toggle'),
-          navClose = document.getElementById('nav-close');
+        navToggle = document.getElementById('nav-toggle'),
+        navClose = document.getElementById('nav-close');
 
     if (navToggle) {
         navToggle.addEventListener('click', () => {
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxthAmAGTAbI0_DGgrs1DgQaSRwYJHX7bPAXYfY74J0V0v9Wr1cdZudm5Fg1OP1H_2a/exec";
 
     if (bookingForm) {
-        bookingForm.addEventListener("submit", function(e) {
+        bookingForm.addEventListener("submit", function (e) {
             e.preventDefault();
 
             const data = {
@@ -113,19 +113,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
             fetch(SCRIPT_URL, {
                 method: "POST",
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(result => {
-                if (popup) {
-                    popup.classList.add("show-popup");
+                body: JSON.stringify(data),
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8"
                 }
-                bookingForm.reset();
             })
-            .catch(error => {
-                console.log(error);
-                alert("Something went wrong.");
-            });
+                .then(() => {
+                    if (popup) {
+                        popup.classList.add("show-popup");
+                    }
+                    bookingForm.reset();
+                })
+                .catch(error => {
+                    console.log(error);
+                    alert("Something went wrong.");
+                });
         });
     }
 
