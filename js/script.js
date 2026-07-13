@@ -109,3 +109,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+//databse code 
+const url = "https://script.google.com/macros/s/AKfycbxthAmAGTAbI0_DGgrs1DgQaSRwYJHX7bPAXYfY74J0V0v9Wr1cdZudm5Fg1OP1H_2a/exec";
+
+const data = {
+    name: name,
+    phone: phone,
+    email: email,
+    barber: barber,
+    service: service,
+    date: date,
+    time: time,
+    message: message
+};
+
+fetch(url, {
+    method: "POST",
+    body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(result => {
+    alert("Appointment Booked Successfully!");
+});
